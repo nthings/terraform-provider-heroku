@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-	heroku "github.com/nthings/heroku-go/v5"
+	heroku "github.com/heroku/heroku-go/v5"
 )
 
 func resourceHerokuAddonAttachmentMigrateState(v int, is *terraform.InstanceState, meta interface{}) (*terraform.InstanceState, error) {

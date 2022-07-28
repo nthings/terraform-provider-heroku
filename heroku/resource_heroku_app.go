@@ -14,7 +14,7 @@ import (
 	multierror "github.com/hashicorp/go-multierror"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	heroku "github.com/nthings/heroku-go/v5"
+	heroku "github.com/heroku/heroku-go/v5"
 )
 
 // herokuApplication is a value type used to hold the details of an

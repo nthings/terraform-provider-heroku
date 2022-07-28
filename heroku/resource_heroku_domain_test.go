@@ -10,8 +10,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
+	heroku "github.com/heroku/heroku-go/v5"
 	"github.com/heroku/terraform-provider-heroku/v4/helper/test"
-	heroku "github.com/nthings/heroku-go/v5"
 )
 
 func TestAccHerokuDomain_Basic(t *testing.T) {

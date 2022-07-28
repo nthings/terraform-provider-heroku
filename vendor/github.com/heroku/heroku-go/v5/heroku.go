@@ -3696,7 +3696,6 @@ type ReviewAppConfigEnableOpts struct {
 // Enable review apps for a pipeline
 func (s *Service) ReviewAppConfigEnable(ctx context.Context, pipelineID string, o ReviewAppConfigEnableOpts) (*ReviewAppConfig, error) {
 	var reviewAppConfig ReviewAppConfig
-	// TODO: Success if review app is already enabled
 	return &reviewAppConfig, s.Post(ctx, &reviewAppConfig, fmt.Sprintf("/pipelines/%v/review-app-config", pipelineID), o)
 }
 

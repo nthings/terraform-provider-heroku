@@ -1,4 +1,4 @@
-module github.com/nthings/heroku-go/v5
+module github.com/heroku/heroku-go/v5
 
 go 1.12
 
