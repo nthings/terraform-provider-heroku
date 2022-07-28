@@ -8,8 +8,8 @@ require (
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/go-uuid v1.0.3
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.17.0
-	github.com/heroku/heroku-go/v5 v5.4.1
 	github.com/mitchellh/go-homedir v1.1.0
+	github.com/nthings/heroku-go/v5 v5.4.1-rc.1
 	github.com/pborman/uuid v1.2.1 // indirect
 	github.com/verybluebot/tarinator-go v0.0.0-20190613183509-5ab4e1193986
 )

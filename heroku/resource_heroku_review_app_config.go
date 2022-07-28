@@ -3,12 +3,14 @@ package heroku
 import (
 	"context"
 	"fmt"
+	"log"
+	"regexp"
+	"strings"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/validation"
-	heroku "github.com/heroku/heroku-go/v5"
-	"log"
-	"regexp"
+	heroku "github.com/nthings/heroku-go/v5"
 )
 
 func resourceHerokuReviewAppConfig() *schema.Resource {
@@ -203,14 +205,17 @@ func resourceHerokuReviewAppConfigCreate(ctx context.Context, d *schema.Resource
 
 	log.Printf("[DEBUG] Enabling review apps config on pipeline %s", pipelineID)
 
+	// TODO: Success if review app is already enabled
 	config, enableErr := client.ReviewAppConfigEnable(ctx, pipelineID, opts)
 	if enableErr != nil {
-		diags = append(diags, diag.Diagnostic{
-			Severity: diag.Error,
-			Summary:  fmt.Sprintf("Unable to enable review apps config for pipeline %s", pipelineID),
-			Detail:   enableErr.Error(),
-		})
-		return diags
+		if !strings.Contains(enableErr.Error(), "Review Apps is already enabled for this pipeline") {
+			diags = append(diags, diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("Unable to enable review apps config for pipeline %s", pipelineID),
+				Detail:   enableErr.Error(),
+			})
+			return diags
+		}
 	}
 
 	log.Printf("[DEBUG] Enabled review apps config on pipeline %s", pipelineID)

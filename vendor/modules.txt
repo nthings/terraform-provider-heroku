@@ -131,9 +131,6 @@ github.com/hashicorp/terraform-registry-address
 github.com/hashicorp/terraform-svchost
 # github.com/hashicorp/yamux v0.0.0-20181012175058-2f1d1f20f75d
 github.com/hashicorp/yamux
-# github.com/heroku/heroku-go/v5 v5.4.1
-## explicit
-github.com/heroku/heroku-go/v5
 # github.com/mattn/go-colorable v0.1.4
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.10
@@ -151,6 +148,9 @@ github.com/mitchellh/go-wordwrap
 github.com/mitchellh/mapstructure
 # github.com/mitchellh/reflectwalk v1.0.2
 github.com/mitchellh/reflectwalk
+# github.com/nthings/heroku-go/v5 v5.4.1-rc.1
+## explicit
+github.com/nthings/heroku-go/v5
 # github.com/oklog/run v1.0.0
 github.com/oklog/run
 # github.com/pborman/uuid v1.2.1
